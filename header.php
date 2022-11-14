@@ -15,11 +15,11 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link active" aria-current="function1.php" href="function1.php">JavaScript Library 1: <b></b></a>
-        <a class="nav-link active" aria-current="function2.php" href="function2.php">JavaScript Library 2: <b></b></a>
-        <a class="nav-link active" aria-current="function3.php" href="function3.php">JavaScript Library 3: <b></b></a>
-        <a class="nav-link active" aria-current="function4.php" href="function4.php">JavaScript Library 4: <b></b></a>
-      </div>
+        <a class="nav-link active" aria-current="library1.php" href="library1.php">JavaScript Library 1: <b></b></a>
+        <a class="nav-link active" aria-current="library2.php" href="library2.php">JavaScript Library 2: <b></b></a>
+        <a class="nav-link active" aria-current="library3.php" href="library3.php">JavaScript Library 3: <b></b></a>
+        <a class="nav-link active" aria-current="library4.php" href="library4.php">JavaScript Library 4: <b></b></a>
+    
     </div>
   </div>
 </nav>
