@@ -1,53 +1,68 @@
 <?php require_once("header.php"); ?>
-<head>	
-	<title>wForms 3.0 - OnBlur Validation Example</title>
-	
-	<meta name="Description" content="wForms is an open-source, unobtrusive javascript library that adds commonly needed behaviors to traditional web forms without the need for any programming skills." />
-	<meta http-equiv="Keywords" content="form, web form, html form, online form, wForms, input validation, field validation, javascript library" />
+<div class="bs-callout bs-callout-warning hidden">
+  <h4>Oh snap!</h4>
+  <p>This form seems to be invalid :(</p>
+</div>
 
-	<link href="../../css/wforms-jsonly.css" type="text/css" rel="stylesheet" />
-	<link href="../../css/wforms-layout.css" type="text/css" rel="stylesheet" />
-	
-	<script src="../../build/wforms.js"></script>
-	<script src="../../customization/wforms_onblur_validation.js"></script>
-</head>
+<div class="bs-callout bs-callout-info hidden">
+  <h4>Yay!</h4>
+  <p>Everything seems to be ok :)</p>
+</div>
 
-<body class="wForm">
+<form id="demo-form" data-parsley-validate="">
+  <label for="fullname">Full Name * :</label>
+  <input type="text" class="form-control" name="fullname" required="">
 
-	<form method="post" action="http://app.formassembly.com/responses/testprocessor" id="testForm" >
-       <div class="oneField" id="testField">
-       		<label for="testField" class="preField">Test Field 1</label>
-       		<input type="text" id="testField"  name="testField"  class="validate-alpha" value="" />  (validate-alpha)<br/>
-		</div>
-        <div class="oneField">
-         	<label for="testField2" class="preField">Test Field 2</label>
-			<input type="checkbox" id="testField2" name="testField2" class="required" value="" /> (required) <br/>
-		</div>
-		<div class="oneField" class="required">
-         	<label for="testField3" class="preField">Test Field 3</label>
-			<input type="radio" id="testField3a" name="testField3" value="a" /> A
-			<input type="radio" id="testField3b" name="testField3" value="b" /> B <br/>
-		</div>
-		<div class="oneField">
-			<label for="testField4" class="preField">Test Field 4</label>			
-			<textarea id="testField4" class="validate-integer"></textarea> (validate-integer) <br/>
-            <br />
-       	</div>
-       	
-       	<div class="actions"><input type="submit" value="TEST 1" /></div>
-	</form>
-		
-	<hr/>
-		
-	<form method="post" action="http://app.formassembly.com/responses/testprocessor" id="testForm2" >	
-		<table style="border:1px solid #EEE">
-			<tr class="required"><td>Label: <span class="reqMark">*</span></td><td><input type="text" class="" /></td></tr>
-			<tr class="required"><td>Label: <span class="reqMark">*</span></td><td><input type="text" class="" /></td></tr>
-		</table>
-		
-		<div class="actions"><input type="submit" value="TEST 2" /></div>
-	</form>
-		 
+  <label for="email">Email * :</label>
+  <input type="email" class="form-control" name="email" data-parsley-trigger="change" required="">
 
-</body>
-</html>
+  <label for="contactMethod">Preferred Contact Method *:</label>
+  <p>
+    Email: <input type="radio" name="contactMethod" id="contactMethodEmail" value="Email" required="">
+    Phone: <input type="radio" name="contactMethod" id="contactMethodPhone" value="Phone">
+  </p>
+
+  <label for="hobbies">Hobbies (Optional, but 2 minimum):</label>
+  <p>
+    Skiing <input type="checkbox" name="hobbies[]" id="hobby1" value="ski" data-parsley-mincheck="2"><br>
+    Running <input type="checkbox" name="hobbies[]" id="hobby2" value="run"><br>
+    Eating <input type="checkbox" name="hobbies[]" id="hobby3" value="eat"><br>
+    Sleeping <input type="checkbox" name="hobbies[]" id="hobby4" value="sleep"><br>
+    Reading <input type="checkbox" name="hobbies[]" id="hobby5" value="read"><br>
+    Coding <input type="checkbox" name="hobbies[]" id="hobby6" value="code"><br>
+  </p>
+
+  <p>
+  <label for="heard">Heard about us via *:</label>
+  <select id="heard" required="">
+    <option value="">Choose..</option>
+    <option value="press">Press</option>
+    <option value="net">Internet</option>
+    <option value="mouth">Word of mouth</option>
+    <option value="other">Other..</option>
+  </select>
+  </p>
+
+  <p>
+  <label for="message">Message (20 chars min, 100 max) :</label>
+  <textarea id="message" class="form-control" name="message" data-parsley-trigger="keyup" data-parsley-minlength="20" data-parsley-maxlength="100" data-parsley-minlength-message="Come on! You need to enter at least a 20 character comment.." data-parsley-validation-threshold="10"></textarea>
+  </p>
+
+  <br>
+  <input type="submit" class="btn btn-default" value="validate">
+
+  <p><small>* Please, note that this demo form is not a perfect example of UX-awareness. The aim here is to show a quick overview of parsley-API and Parsley customizable behavior.</small></p>
+</form>
+
+<script type="text/javascript">
+$(function () {
+  $('#demo-form').parsley().on('field:validated', function() {
+    var ok = $('.parsley-error').length === 0;
+    $('.bs-callout-info').toggleClass('hidden', !ok);
+    $('.bs-callout-warning').toggleClass('hidden', ok);
+  })
+  .on('form:submit', function() {
+    return false; // Don't submit form for this demo
+  });
+});
+</script>
