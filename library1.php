@@ -1,15 +1,6 @@
 <?php require_once("header.php"); ?>
 <div class="bs-callout bs-callout-warning hidden">
-  <h4>Oh snap!</h4>
-  <p>This form seems to be invalid :(</p>
-</div>
-
-<div class="bs-callout bs-callout-info hidden">
-  <h4>Yay!</h4>
-  <p>Everything seems to be ok :)</p>
-</div>
-
-<form id="demo-form" data-parsley-validate="">
+  <form id="demo-form" data-parsley-validate="" novalidate="">
   <label for="fullname">Full Name * :</label>
   <input type="text" class="form-control" name="fullname" required="">
 
@@ -18,18 +9,18 @@
 
   <label for="contactMethod">Preferred Contact Method *:</label>
   <p>
-    Email: <input type="radio" name="contactMethod" id="contactMethodEmail" value="Email" required="">
-    Phone: <input type="radio" name="contactMethod" id="contactMethodPhone" value="Phone">
+    Email: <input type="radio" name="contactMethod" id="contactMethodEmail" value="Email" required="" data-parsley-multiple="contactMethod">
+    Phone: <input type="radio" name="contactMethod" id="contactMethodPhone" value="Phone" data-parsley-multiple="contactMethod">
   </p>
 
   <label for="hobbies">Hobbies (Optional, but 2 minimum):</label>
   <p>
-    Skiing <input type="checkbox" name="hobbies[]" id="hobby1" value="ski" data-parsley-mincheck="2"><br>
-    Running <input type="checkbox" name="hobbies[]" id="hobby2" value="run"><br>
-    Eating <input type="checkbox" name="hobbies[]" id="hobby3" value="eat"><br>
-    Sleeping <input type="checkbox" name="hobbies[]" id="hobby4" value="sleep"><br>
-    Reading <input type="checkbox" name="hobbies[]" id="hobby5" value="read"><br>
-    Coding <input type="checkbox" name="hobbies[]" id="hobby6" value="code"><br>
+    Skiing <input type="checkbox" name="hobbies[]" id="hobby1" value="ski" data-parsley-mincheck="2" data-parsley-multiple="hobbies"><br>
+    Running <input type="checkbox" name="hobbies[]" id="hobby2" value="run" data-parsley-multiple="hobbies"><br>
+    Eating <input type="checkbox" name="hobbies[]" id="hobby3" value="eat" data-parsley-multiple="hobbies"><br>
+    Sleeping <input type="checkbox" name="hobbies[]" id="hobby4" value="sleep" data-parsley-multiple="hobbies"><br>
+    Reading <input type="checkbox" name="hobbies[]" id="hobby5" value="read" data-parsley-multiple="hobbies"><br>
+    Coding <input type="checkbox" name="hobbies[]" id="hobby6" value="code" data-parsley-multiple="hobbies"><br>
   </p>
 
   <p>
@@ -53,7 +44,6 @@
 
   <p><small>* Please, note that this demo form is not a perfect example of UX-awareness. The aim here is to show a quick overview of parsley-API and Parsley customizable behavior.</small></p>
 </form>
-
 <script type="text/javascript">
 $(function () {
   $('#demo-form').parsley().on('field:validated', function() {
