@@ -41,8 +41,6 @@
 
   <br>
   <input type="submit" class="btn btn-default" value="validate">
-
-  <p><small>* Please, note that this demo form is not a perfect example of UX-awareness. The aim here is to show a quick overview of parsley-API and Parsley customizable behavior.</small></p>
 </form>
 <script type="text/javascript">
 $(function () {
