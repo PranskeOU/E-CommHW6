@@ -17,10 +17,10 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link active" aria-current="library1.php" href="library1.php">JavaScript Library 1: <b></b></a>
-        <a class="nav-link active" aria-current="library2.php" href="library2.php">JavaScript Library 2: <b></b></a>
-        <a class="nav-link active" aria-current="library3.php" href="library3.php">JavaScript Library 3: <b></b></a>
-        <a class="nav-link active" aria-current="library4.php" href="library4.php">JavaScript Library 4: <b></b></a>
+        <a class="nav-link active" aria-current="library1.php" href="library1.php">JavaScript Library 1: Form Validation<b></b></a>
+        <a class="nav-link active" aria-current="library2.php" href="library2.php">JavaScript Library 2: Slideshow<b></b></a>
+        <a class="nav-link active" aria-current="library3.php" href="library3.php">JavaScript Library 3: Word Cloud<b></b></a>
+        <a class="nav-link active" aria-current="library4.php" href="library4.php">JavaScript Library 4: 3D Shape<b></b></a>
     
     </div>
   </div>
