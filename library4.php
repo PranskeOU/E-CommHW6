@@ -1,15 +1,7 @@
 <?php require_once("header.php"); ?>
 <body>
-
-    <nav>
-                <a href="index.html">Home</a>
-                <a href="lib1.html">Lib 1</a>
-                <a href="lib2.html">Lib 2</a>
-            </nav>
-
-
-   <script src="//cdn.rawgit.com/mrdoob/three.js/master/build/three.min.js"></script>
-		<script>
+<script src="//cdn.rawgit.com/mrdoob/three.js/master/build/three.min.js"></script>
+<script>
 var camera, scene, renderer;
 var geometry, material, mesh;
 
@@ -25,7 +17,7 @@ function init() {
 
     geometry = new THREE.BoxGeometry(200, 200, 200);
     material = new THREE.MeshBasicMaterial({
-        color: 0xff0000,
+        color: 0x0084c1,
         wireframe: true
     });
 
