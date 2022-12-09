@@ -15,7 +15,7 @@ function init() {
 
     scene = new THREE.Scene();
 
-    geometry = new THREE.BoxGeometry(200, 200, 200);
+    geometry = new THREE.BoxGeometry(800, 800, 800);
     material = new THREE.MeshBasicMaterial({
         color: 0x0084c1,
         wireframe: true
