@@ -1,34 +1,36 @@
 <?php require_once("header.php"); ?>
 <div class="container">
-<h1>Just-validate Demo</h1>
 <div class="col-md-6 center-block no-float mt30">
   <h2>Classic validation</h2>
   <form action="#" class="js-form form" novalidate="novalidate">
     <div class="row">
       <div class="form-group col-md-6">
         <label for="name">Enter your name</label>
-        <input type="text" class="form__input form-control js-validate-error-field" placeholder="Enter your name" autocomplete="off" data-validate-field="name" name="name" id="name" style="border: 1px solid rgb(184, 17, 17); color: rgb(184, 17, 17);"><div class="js-validate-error-label" style="color: #B81111">The field is required</div>
+        <input type="text" class="form__input form-control" placeholder="Enter your name" autocomplete="off" data-validate-field="name" name="name" id="name">
       </div>
       <div class="form-group col-md-6">
         <label for="email">Enter your email</label>
-        <input type="email" class="form__input form-control js-validate-error-field" placeholder="Enter your email" autocomplete="off" data-validate-field="email" name="email" id="email" style="border: 1px solid rgb(184, 17, 17); color: rgb(184, 17, 17);"><div class="js-validate-error-label" style="color: #B81111">The field is required</div>
+        <input type="email" class="form__input form-control" placeholder="Enter your email" autocomplete="off" data-validate-field="email" name="email" id="email">
       </div>
     </div>
     <div class="form-group">
       <label for="password">Enter your password</label>
-      <input type="password" class="form__input form-control js-validate-error-field" placeholder="Enter your password" autocomplete="off" data-validate-field="password" name="password" id="password" style="border: 1px solid rgb(184, 17, 17); color: rgb(184, 17, 17);"><div class="js-validate-error-label" style="color: #B81111">The field is required</div>
+      <input type="password" class="form__input form-control" placeholder="Enter your password" autocomplete="off" data-validate-field="password" name="password" id="password">
     </div>
     <div class="form-group">
       <label for="password">Enter your text</label>
-      <textarea name="msg" cols="30" rows="10" class="form__textarea form-control js-validate-error-field" data-validate-field="text" id="text" style="border: 1px solid rgb(184, 17, 17); color: rgb(184, 17, 17);"></textarea><div class="js-validate-error-label" style="color: #B81111">The field is required</div>
+      <textarea name="msg" cols="30" rows="10" class="form__textarea form-control" data-validate-field="text" id="text"></textarea>
     </div>
     <div class="form-group">
-      <input type="checkbox" id="checkbox" class="form__checkbox" data-validate-field="checkbox" checked="" style=""><label for="checkbox">I agree to the terms and conditions.</label>
+      <input type="checkbox" id="checkbox" class="form__checkbox" data-validate-field="checkbox" checked=""><label for="checkbox">I agree</label>
+    </div>
+    <div class="form-group">
+      <label><input type="checkbox" class="form__checkbox" data-validate-field="checkbox2" checked="">I agree</label>
     </div>
 
-    <button class="form__btn btn btn-primary" style="">SUBMIT</button>
+    <button class="form__btn btn btn-primary">SUBMIT</button>
   </form>
-
+</div>
 <script src="js/just-validate.min.js"></script>
 
 <script>
