@@ -21,27 +21,6 @@
     .container { margin-top:150px}
   </style>
 </head>
-<body>
-<div id="css-script-menu">
-  <div class="css-script-center">
-    <ul>
-      <li><a href="https://www.cssscript.com/custom-html5-form-validator-vanilla-javascript-just-validate/">Download</a></li>
-      <li><a href="https://www.cssscript.com/">Back To CSS Script</a></li>
-    </ul>
-    <div class="css-script-ads">
-    <script async="" src="//www.google-analytics.com/analytics.js"></script><script type="text/javascript"><!--
-google_ad_client = "ca-pub-2783044520727903";
-/* CSSScript Demo Page */
-google_ad_slot = "3025259193";
-google_ad_width = 728;
-google_ad_height = 90;
-//-->
-</script>
-      <script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script></div>
-    <div class="css-script-clear"></div>
-  </div>
-</div>
 <div class="container">
 <h1>Just-validate Demo</h1>
 <div class="col-md-6 center-block no-float mt30">
