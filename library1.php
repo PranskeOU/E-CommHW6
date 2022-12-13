@@ -22,7 +22,6 @@
   </style>
 </head>
 <div class="container">
-<h1>Just-validate Demo</h1>
 <div class="col-md-6 center-block no-float mt30">
   <h2>Classic validation</h2>
   <form action="#" class="js-form form" novalidate="novalidate">
