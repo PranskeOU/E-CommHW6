@@ -1,5 +1,49 @@
 <?php require_once("header.php"); ?>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://www.cssscript.com/wp-includes/css/sticky.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <style>
+  body { background-color:#fafafa;}
+    .no-float {
+      float: none;
+    }
+
+    .mt30 {
+      margin-top: 30px;
+    }
+
+    .js-validate-error-label {
+      margin-top: 5px;
+    }
+    .container { margin-top:150px}
+  </style>
+</head>
+<body>
+<div id="css-script-menu">
+  <div class="css-script-center">
+    <ul>
+      <li><a href="https://www.cssscript.com/custom-html5-form-validator-vanilla-javascript-just-validate/">Download</a></li>
+      <li><a href="https://www.cssscript.com/">Back To CSS Script</a></li>
+    </ul>
+    <div class="css-script-ads">
+    <script async="" src="//www.google-analytics.com/analytics.js"></script><script type="text/javascript"><!--
+google_ad_client = "ca-pub-2783044520727903";
+/* CSSScript Demo Page */
+google_ad_slot = "3025259193";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+      <script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+    <div class="css-script-clear"></div>
+  </div>
+</div>
 <div class="container">
+<h1>Just-validate Demo</h1>
 <div class="col-md-6 center-block no-float mt30">
   <h2>Classic validation</h2>
   <form action="#" class="js-form form" novalidate="novalidate">
@@ -22,15 +66,30 @@
       <textarea name="msg" cols="30" rows="10" class="form__textarea form-control" data-validate-field="text" id="text"></textarea>
     </div>
     <div class="form-group">
-      <input type="checkbox" id="checkbox" class="form__checkbox" data-validate-field="checkbox" checked=""><label for="checkbox">I agree</label>
-    </div>
-    <div class="form-group">
-      <label><input type="checkbox" class="form__checkbox" data-validate-field="checkbox2" checked="">I agree</label>
+      <input type="checkbox" id="checkbox" class="form__checkbox" data-validate-field="checkbox" checked=""><label for="checkbox">I agree to the terms and conditions</label>
     </div>
 
     <button class="form__btn btn btn-primary">SUBMIT</button>
   </form>
+  <br>
+  <h2>Default validation</h2>
+  <div>For success validation email must be equal ok@test.com</div>
+  <br>
+  <form action="#" class="js-form-2 form" novalidate="novalidate">
+    <div class="row">
+      <div class="form-group col-md-6">
+        <label for="name">Enter your name</label>
+        <input type="text" class="form__input form-control" placeholder="Enter your name" autocomplete="off" data-validate-field="name" name="name" id="name-1">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="email">Enter your email</label>
+        <input type="email" class="form__input form-control" placeholder="Enter your email" autocomplete="off" data-validate-field="email" name="email" id="email-1">
+      </div>
+    </div>
+    <button class="form__btn btn btn-primary">SUBMIT</button>
+  </form>
 </div>
+
 <script src="js/just-validate.min.js"></script>
 
 <script>
@@ -86,62 +145,17 @@
           }
   );
 </script>
-<script>
-  // initialize the validation library
-const validation = new JustValidate('#form', {
-      errorFieldCssClass: 'is-invalid',
-});
-// apply rules to form fields
-validation
-  .addField('#name', [
-    {
-      rule: 'minLength',
-      value: 3,
-    },
-    {
-      rule: 'maxLength',
-      value: 30,
-    },
-  ])
-  .addField('#email', [
-    {
-      rule: 'required',
-      errorMessage: 'Field is required',
-    },
-    {
-      rule: 'email',
-      errorMessage: 'Email is invalid!',
-    },
-  ])
-  .addField('#password', [
-    {
-      rule: 'password',
-    },
-  ])
-  .addField('#message', [
-    {
-      validator: (value) => {
-        return value[0] === '!';
-      },
-    },
-  ])
-  .addField('#consent_checkbox', [
-    {
-      rule: 'required',
-    },
-  ])
-  .addField('#favorite_animal_select', [
-    {
-      rule: 'required',
-    },
-  ])
-  .addRequiredGroup(
-    '#read_terms_checkbox_group',
-    'You should select at least one communication channel'
-  )
-  .addRequiredGroup('#communication_radio_group')
-  .onSuccess((event) => {
-    console.log('Validation passes and form submitted', event);
-  });
-  </script>
 </div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46156385-1', 'cssscript.com');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>
